@@ -1,0 +1,46 @@
+{% extends "base.html" %} {% block title %}Analysis Results of {{ name }}{% endblock %} {% block content %}
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+<div class="loginbox" style="height: 530px; top: 52%;">
+    <a href="/"><img src="{{ url_for('static', filename='logo.png') }}" class="avatar"></a>
+    <h1>Twitter Sentiment Analysis</h1>
+
+    {% if request.form.get('userid') %}
+
+    <p style="padding-left: 30px;"> Account followers:- <span style="color: #87cefa;">{{ followers }} followers</span>
+    </p>
+    {% endif %}
+    <br>
+
+    <p style="color: #00ff00; padding-left: 30px;">Positive:- {{ positive }}%</p>
+    <center>
+        <p style="font-size: 35px; position: relative;bottom: 40px;">&#128578;</p>
+    </center>
+
+    <p style="color: #ff003f; padding-left: 30px;">Negative:- {{ negative }}%</p>
+    <center>
+        <p style="font-size: 35px; position: relative;bottom: 40px;">&#128577;</p>
+    </center>
+
+    <p style="color: #FFFF00; padding-left: 30px;">Neutral:- {{ neutral }}%</p>
+    <center>
+        <p style="font-size: 35px; position: relative;bottom: 40px;">&#128580;</p>
+    </center>
+
+    {% if request.form.get('userid') %}
+    <p style="padding-left: 30px; position: relative;bottom: 20px; color: #87cefa;"> Probability of success:- <span
+            style="color: whitesmoke"> {{ average }}%</span></p>
+    {% endif %}
+    <br>
+    <center><a href="/"><button class="btn btn-light btn-outline-primary" id="sendMessageButton"
+                style="position: relative;bottom: 25px;right: 100px;">&#8592; Back to
+                Home</button></a>
+    </center>
+    <center><a href="/visualization"><button class="btn btn-light btn-outline-primary" id="sendMessageButton"
+                style="position: relative;bottom: 61px;left: 100px;">Generate
+                graph</button></a>
+    </center>
+
+</div>
+{% endblock %}

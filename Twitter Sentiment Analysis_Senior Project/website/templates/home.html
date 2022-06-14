@@ -1,0 +1,18 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content %}
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+<div class="loginbox">
+    <a href="/"><img src="{{ url_for('static', filename='logo.png') }}" class="avatar"></a>
+        <h1>Twitter Sentiment Analysis</h1>
+        <form method="post" name="Userinput" id="Userinput" action="/sentiment">
+            <p style="color: #55ACEE;">UserID</p>
+            <input type="text" name="userid" placeholder="Enter UserID without @">
+            <p style="color: #55ACEE;">HashTag</p>
+            <input type="text" name="hashtag" placeholder="Enter HashTag with #">
+            <center><button type="submit" class="btn btn-light btn-outline-primary" id="sendMessageButton" style="position: relative;top: 20px;">Get Analysis</button></center>
+            <br>
+            <center><a href="/"><h6 style="color: red" >{{ error }}</h6></a></center>
+        </form>  
+    </div>
+    
+{% endblock %}

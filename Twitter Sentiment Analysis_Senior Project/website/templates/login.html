@@ -1,0 +1,23 @@
+{% extends "base.html" %} {% block title %}Login{% endblock %} {% block content
+%}
+
+<body style="background-image: url(../static/login.png); background-size:cover;">
+  <br>
+  <form method="POST" style="font-size:25px; padding-left: 300px; padding-right: 300px;">
+    <h3 align="center" style="color: white;">Login</h3>
+    <br>
+    <div class="form-group" style="font-size: 22px;">
+      <label for="email" style="color: white;">Email Address</label>
+      <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" />
+    </div>
+    <div class="form-group" style="font-size: 22px;">
+      <label for="password" style="color: white;">Password</label>
+      <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" />
+    </div>
+    <br />
+    <div style="text-align:center;">
+      <button type="submit" class="btn btn-primary btn-lg">Login</button>
+    </div>
+  </form>
+</body>
+{% endblock %}
